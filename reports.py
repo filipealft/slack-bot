@@ -70,7 +70,7 @@ def send_daily_report(connection):
 
     client = WebClient(token=os.environ['SLACK_TOKEN'])
     try:
-        client.chat_postMessage(channel="#report_test", text=message)
+        client.chat_postMessage(channel="#report", text=message)
         print("Mensagem enviada com sucesso")
     except SlackApiError as e:
         print("Erro ao enviar a mensagem: {}".format(e))
@@ -122,7 +122,7 @@ def get_last_trade(connection):
                 message += f"🏦 Resultado: {result}\n"
 
                 try:
-                    client.chat_postMessage(channel="#report_test", text=message)
+                    client.chat_postMessage(channel="#report", text=message)
                     print("Mensagem enviada com sucesso")
                 except SlackApiError as e:
                     print("Erro ao enviar a mensagem: {}".format(e))

@@ -85,7 +85,7 @@ def get_last_trade(connection):
     
     while True:
         try:
-            cursor.execute("SELECT MAX(id) FROM bet")
+            cursor.execute("SELECT MAX(id) FROM bet WHERE (bet_type IS NULL OR bet_type = 'real') AND result IS NOT NULL")
             current_id = cursor.fetchone()[0]
 
             if current_id != latest_id:

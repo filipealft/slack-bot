@@ -16,8 +16,8 @@ def run_get_last_trade():
 #     subprocess.run(["python", "arquivo2.py"])
 
 
-schedule.every(5).seconds.do(run_daily_report)
-# schedule.every().day.at("18:00").do(run_daily_report)
+# schedule.every(5).seconds.do(run_daily_report)
+schedule.every().day.at("18:00").do(run_daily_report)
 # schedule.every(10).seconds.do(run_file2)
 
 # def run_daily_report():
